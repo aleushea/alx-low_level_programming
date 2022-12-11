@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdio.h>
 /*
-* the main function prints a random positive, negative, or zero number 
+* The main function prints a random positive, negative, or zero number
 *
 * Return: 0
 */
