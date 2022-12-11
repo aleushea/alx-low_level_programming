@@ -1,6 +1,11 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
+/*
+* the main function prints a random positive, negative, or zero number 
+*
+* Return: 0
+*/
 int main(void)
 {
 int n;
