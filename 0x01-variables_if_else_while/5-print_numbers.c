@@ -1,45 +1,25 @@
+/*
+ * File: 5-print_numbers.c
+ */
 #include <stdio.h>
 /**
- * main - Prints the numbers from 00 to 99, numbers separated by
- *        , followed by a space, in ascending order.
- *        a comma followed by a space, in ascending order.
+ * main - Prints all single digit numbers of base 10 starting from 0.
  *
- * Return: 0 if successful, non-zero otherwise.
+ * Return: Always 0.
  */
 
 int main(void)
+
 {
 
-	int digit1 = 0;
+	int num;
 
-	int digit2;
+	for (num = 0; num < 10; num++)
 
-	while (digit1 < 10)
+		printf("%d", num);
 
-	for (digit1 = 0; digit1 < 10; digit1++)
+	printf("\n");
 
-	{
-		for (digit2 = 0; digit2 < 10; digit2++)
-		{
-			putchar((digit1 % 10) + '0');
-			putchar((digit2 % 10) + '0');
-			if (digit1 == 9 && digit2 == 9)
-			{
-				break;
-
-			}
-			else
-			{
-				putchar(44);
-				putchar(32);
-			}
-				continue;
-			putchar(',');
-			putchar(' ');
-		}
-		digit1++;
-	}
-	putchar('\n');
 	return (0);
 
 }
