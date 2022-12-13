@@ -1,44 +1,25 @@
-/*
- * File: 10-print_comb2.c
- */
-
+/**
+* File: 2-print_alphabet.c
+* this script is from me
+*/
 #include <stdio.h>
 /**
- * main - Prints the numbers from 00 to 99, numbers separated by
- *        , followed by a space, in ascending order.
- *        a comma followed by a space, in ascending order.
- *
- * Return: Always 0.
- */
-
+* Main - function
+* 
+* Return: 0 if successful, non-zero otherwise.
+* Return: Always 0.
+*/
 int main(void)
 {
-	int digit1 = 0;
-	int digit2;
+	char letter;
 
-	while (digit1 < 10)
+	for (letter = 'a'; letter <= 'z'; letter++)
 
-	for (digit1 = 0; digit1 < 10; digit1++)
-	{
-		for (digit2 = 0; digit2 < 10; digit2++)
-		{
-			putchar((digit1 % 10) + '0');
-			putchar((digit2 % 10) + '0');
-			if (digit1 == 9 && digit2 == 9)
-			{
-				break;
-			}
-			else
-			{
-				putchar(44);
-				putchar(32);
-			}
-				continue;
-			putchar(',');
-			putchar(' ');
-		}
-		digit1++;
-	}
+		putchar(letter);
+
+
 	putchar('\n');
+
 	return (0);
+
 }
