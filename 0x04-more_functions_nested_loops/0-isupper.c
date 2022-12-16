@@ -7,15 +7,8 @@
 */
 int _isupper(int c)
 {
-char capital = 'A';
-int isupper = 0;
-for (; capital <= 'Z'; capital++)
-{
-if (c == capital)
-{
-isupper = 1;
-break;
-}
-}
-return (isupper);
+if ((c >= 'A') && (c <= 'Z'))
+return (1);
+else
+return (0);
 }
