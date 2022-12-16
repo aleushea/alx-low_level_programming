@@ -6,8 +6,6 @@
 * Return: a square made of '#'
 */
 
-
-
 void print_square(int size)
 
 int  col, row;
