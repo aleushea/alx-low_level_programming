@@ -11,11 +11,10 @@
 */
 
 int main(void)
-
 {
-char letter;
-for (letter = 'z'; letter >= 'a'; letter--)
-putchar(letter);
-putchar('\n');
-return (0);
+int last_digit = n % 10;
+if (last_digit < 0)
+last_digit *= -1;
+_putchar(last_digit + '0');
+return (last_digit);
 }
