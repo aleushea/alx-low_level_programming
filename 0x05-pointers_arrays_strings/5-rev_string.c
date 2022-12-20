@@ -19,3 +19,4 @@ rev = s[i];
 s[i] = s[fcounter];
 s[fcounter] = rev;
 }
+}
