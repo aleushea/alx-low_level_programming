@@ -1,3 +1,4 @@
+#include "main.h"
 /**
 * _atoi - Entry point
 * @s: input
@@ -5,5 +6,6 @@
 */
 int _atoi(char *s)
 {
+
 return (0);
 }
