@@ -48,3 +48,4 @@ return (0);
 if (st <= end || st < end + 1)
 return (palindrome(str, st + 1, end - 1));
 return (1);
+}
