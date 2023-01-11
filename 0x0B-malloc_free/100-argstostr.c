@@ -1,43 +1,47 @@
-#include "maain.h"
+#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * argstostr - prints args
- * @ac: takes in width of grid
- * @av: height of grid
- * Return: the args one line at a time
+ * *argstostr - convert arguments on command line to strings
+ * @ac: int type
+ * @av: pointer to array
+ * Return: arguments as strings
  */
 
 char *argstostr(int ac, char **av)
 {
-char *str;
-int count = 0, a = 0, b = 0, c = 0;
+int size, count, count1, count2 = 0;
+char *ptr;
 if (ac == 0 || av == NULL)
-return (NULL);
-while (a < ac)
-{
-b = 0;
-while (av[a][b] != '\0')
-{
-count++;
-b++;
-}
-a++;
-}
-count = count + ac + 1;
-str = malloc(sizeof(char) * count);
-if (str == NULL)
 {
 return (NULL);
 }
-for (a = 0; a < ac; a++)
+for (count = 0; count < ac; count++)
 {
-for (b = 0; av[a][b] != '\0'; b++)
+for (count1 = 0; av[count][count1] != '\0'; count1++)
 {
-str[c] = av[a][b];
-c++;
+size += 1;
 }
-str[c] = '\n';
-c++;
+size += 1;
 }
-return (str);
+size += 1;
+ptr = malloc(sizeof(char) * size);
+if (ptr == NULL)
+{
+free(ptr);
+return (NULL);
+}
+for (count = 0; count < ac; count++)
+{
+for (count1 = 0; av[count][count1] != '\0'; count1++)
+{
+ptr[count2] = av[count][count1];
+count2++;
+}
+ptr[count2] = '\n';
+count2++;
+}
+ptr[count2] = '\0';
+return (ptr);
 }
