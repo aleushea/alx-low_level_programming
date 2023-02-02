@@ -14,8 +14,11 @@ return;
 
 while (*head != NULL)
 {
+to_be_free = *head;
+free(head);
+*head = to_be_free->next;
 to_be_free = (*head)->next;
-free(*head)->next;
+free(head);
 *head = to_be_free;
 }
 }
