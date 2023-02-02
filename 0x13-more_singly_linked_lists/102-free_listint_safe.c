@@ -7,29 +7,33 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-size_t len = 0;
-int diff;
-listint_t *head2;
-if (!h || !*h)
-	return (0);
-while (*h)
+	listint_t *this_node, *tempo, *head;
+	size_t total, index;
+
+	if (h == NULL || *h == NULL)
+		return (0);
+
+	this_node = *h;
+	head = *h;
+	total = 0;
+
+	while (head != NULL)
 	{
-	diff = *h - (*h)->next;
-	if (diff > 0)
+		tempo = *h;
+		for (index = 0; index < total; index++)
 		{
-		head2 = (*h)->next;
-		free(*h);
-		*h = head2;
-		len++;
+			if (tempo == this_node)
+			{
+				*h = NULL;
+				return (total);
+			}
+			tempo = tempo->next;
 		}
-	else
-		{
-		free(*h);
-		*h = NULL;
-		len++;
-		break;
-		}
+		this_node = head->next;
+		free(head);
+		head = this_node;
+		total++;
 	}
-*h = NULL;
-return (len);
+	*h = NULL;
+	return (total);
 }
