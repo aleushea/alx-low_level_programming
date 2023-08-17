@@ -1,21 +1,21 @@
 #include "lists.h"
-#include <stdlib.h>
 
 /**
- * free_dlistint - free a list
+ * get_dnodeint_at_index - get node by index
  * @head: list
- * Return: Void
+ * @index: index of element
+ * Return: element by index
  */
 
-void free_dlistint(dlistint_t *head)
+dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	dlistint_t *start, *check;
+	unsigned int c;
 
-	start = head;
-	while (start != NULL)
+	for (c = 0; c < index && head->next; c++)
 	{
-		check = start->next;
-		free(start);
-		start = check;
+		head = head->next;
 	}
+	if (c < index)
+	return (NULL);
+	return (head);
 }
