@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * print_dlistint - this function prints all elements of a dubly linked list dlistint_t list.
+ * print_dlistint - this function prints all elements
  * @h: head of a doubly linked list
  * Return: the number of nodes
  */
