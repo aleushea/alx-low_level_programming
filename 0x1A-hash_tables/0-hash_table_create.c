@@ -4,9 +4,9 @@
  * hash_table_create - Function that creates my hush tabel
  * @size: size of array
  * Return: pointer to newly created my hush tabel
- * /
+ */
 
-hash_table-t *hash_table_create(unsigned long int size)
+hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *my_table;
 	unsigned long int index;
