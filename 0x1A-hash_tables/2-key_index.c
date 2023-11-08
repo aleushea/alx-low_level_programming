@@ -1,27 +1,13 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "hash_tables.h"
 
 /**
- * main - check the code
+ * key_index - a function to Get indexof a key
+ * @key: key of hash table
+ * @size: size of the array of the hash table
  *
- * Return: Always EXIT_SUCCESS.
+ * Return: Idex at which key/value pair is stored
  */
-int main(void)
+unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
-	char *s;
-	unsigned long int hash_table_array_size;
-
-	hash_table_array_size = 1024;
-	s = "cisfun";
-	printf("%lu\n", hash_djb2((unsigned char *)s));
-	printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));
-	s = "Don't forget to tweet today";
-	printf("%lu\n", hash_djb2((unsigned char *)s));
-	printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));
-	s = "98";
-	printf("%lu\n", hash_djb2((unsigned char *)s));
-	printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));
-return (EXIT_SUCCESS);
+	return (hash_djb2(key) % size);
 }
